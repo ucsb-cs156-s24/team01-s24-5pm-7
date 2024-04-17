@@ -10,7 +10,7 @@ Lab instructions: <https://ucsb-cs156.github.io/s24/lab/team01.html>
 | Adil Ahmed     | adilahmed2    | `TidesQueryService`         | `TidesController`         |
 | Grace Feng     | gracefeng05   | `UniversityQueryService`    | `UniversityController`    |
 | Aneesh Agarwal | aneeshtheplug | `ZipCodeQueryService`       | `ZipCodeController`       |
-| June BI        | zhenbi93      | `JokeQueryService`          | `JokeQueryController`     |
+| June BI        | zhenbi93      | `JokeQueryService`          | `JokeController`     |
 ```
 
 Repo: https://ucsb-cs156-s24/team01-s24-5pm-7
