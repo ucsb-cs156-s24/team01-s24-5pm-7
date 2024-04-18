@@ -23,8 +23,12 @@ public class JokeQueryServiceTests {
 
     @Test
     public void test_getJSON() {
+        String category = "safe-mode";
+        String numJokes = "1";
 
-        String expectedURL = JokeQueryService.ENDPOINT;
+        String expectedURL = JokeQueryService.ENDPOINT.replace("{category}", category)
+                .replace("{numJokes}", numJokes);
+
         String fakeJsonResult = "{ \"fake\" : \"result\" }";
 
         this.mockRestServiceServer.expect(requestTo(expectedURL))
@@ -32,7 +36,7 @@ public class JokeQueryServiceTests {
                 .andExpect(header("Content-Type", MediaType.APPLICATION_JSON.toString()))
                 .andRespond(withSuccess(fakeJsonResult, MediaType.APPLICATION_JSON));
 
-        String actualResult = jokeQueryService.getJSON();
+        String actualResult = jokeQueryService.getJSON(category, numJokes);
         assertEquals(fakeJsonResult, actualResult);
     }
 }
