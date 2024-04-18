@@ -16,6 +16,7 @@ import org.springframework.http.HttpMethod;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+
 import org.springframework.web.client.HttpClientErrorException;
 
 /* GOAL: Location look up (enter a string, get back locations in the world along with their latitude/longitude) */
