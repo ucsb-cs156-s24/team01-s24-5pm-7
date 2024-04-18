@@ -12,7 +12,6 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import java.util.List;
 import java.util.Map;
 
@@ -20,9 +19,6 @@ import java.util.Map;
 @Slf4j
 @Service
 public class ZipCodeQueryService {
-
-    ObjectMapper mapper = new ObjectMapper();
-
     private final RestTemplate restTemplate;
 
     public ZipCodeQueryService(RestTemplateBuilder restTemplateBuilder) {
