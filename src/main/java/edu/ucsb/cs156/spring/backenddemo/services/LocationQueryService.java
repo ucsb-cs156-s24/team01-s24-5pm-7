@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.client.RestTemplate;
 
+/* GOAL: Location look up (enter a string, get back locations in the world along with their latitude/longitude) */
 
 @Service
 public class LocationQueryService {
