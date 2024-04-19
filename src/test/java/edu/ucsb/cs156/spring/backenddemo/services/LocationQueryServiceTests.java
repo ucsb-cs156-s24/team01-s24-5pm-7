@@ -12,20 +12,20 @@ import static org.springframework.test.web.client.match.MockRestRequestMatchers.
 import static org.springframework.test.web.client.response.MockRestResponseCreators.withSuccess;
 import static org.springframework.test.web.client.match.MockRestRequestMatchers.header;
 
-@RestClientTest(CountryCodeQueryService.class)
-public class CountryCodeQueryServiceTests {
+@RestClientTest(LocationQueryService.class)
+public class LocationQueryServiceTests {
 
     @Autowired
     private MockRestServiceServer mockRestServiceServer;
 
     @Autowired
-    private CountryCodeQueryService countryCodeQueryService;
+    private LocationQueryService locationQueryService;
 
     @Test
     public void test_getJSON() {
 
-        String country = "UnitedStates";
-        String expectedURL = CountryCodeQueryService.ENDPOINT.replace("{country}", country);
+        String location = "Arcadia";
+        String expectedURL = LocationQueryService.ENDPOINT.replace("{location}", location);
 
         String fakeJsonResult = "{ \"fake\" : \"result\" }";
 
@@ -34,7 +34,7 @@ public class CountryCodeQueryServiceTests {
                 .andExpect(header("Content-Type", MediaType.APPLICATION_JSON.toString()))
                 .andRespond(withSuccess(fakeJsonResult, MediaType.APPLICATION_JSON));
 
-        String actualResult = countryCodeQueryService.getJSON(country);
+        String actualResult = locationQueryService.getJSON(location);
         assertEquals(fakeJsonResult, actualResult);
     }
 }
