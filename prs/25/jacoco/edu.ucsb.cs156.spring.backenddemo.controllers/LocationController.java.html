@@ -26,16 +26,16 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 <span class="fc" id="L26">    ObjectMapper mapper = new ObjectMapper();</span>
 
     @Autowired
-    LocationQueryService locationCodeQueryService;
+    LocationQueryService locationQueryService;
 
     @Operation(summary = &quot;Get list of locations that match a given location name&quot;, description = &quot;Uses API documented here: https://nominatim.org/release-docs/develop/api/Search/&quot;)
     @GetMapping(&quot;/get&quot;)
-    public ResponseEntity&lt;String&gt; getCountryCodes(
+    public ResponseEntity&lt;String&gt; getLocation(
             @Parameter(name = &quot;location&quot;, example = &quot;name to search, e.g. 'Isla Vista' or 'Eiffel Tower'&quot;) @RequestParam String location)
             throws JsonProcessingException {
-<span class="nc" id="L36">        log.info(&quot;getCountryCodes: location={}&quot;, location);</span>
-<span class="nc" id="L37">        String result = locationCodeQueryService.getJSON(location);</span>
-<span class="nc" id="L38">        return ResponseEntity.ok().body(result);</span>
+<span class="fc" id="L36">        log.info(&quot;getCountryCodes: location={}&quot;, location);</span>
+<span class="fc" id="L37">        String result = locationQueryService.getJSON(location);</span>
+<span class="fc" id="L38">        return ResponseEntity.ok().body(result);</span>
     }
 
 }
