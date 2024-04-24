@@ -26,15 +26,15 @@ public class LocationController {
     ObjectMapper mapper = new ObjectMapper();
 
     @Autowired
-    LocationQueryService locationCodeQueryService;
+    LocationQueryService locationQueryService;
 
     @Operation(summary = "Get list of locations that match a given location name", description = "Uses API documented here: https://nominatim.org/release-docs/develop/api/Search/")
     @GetMapping("/get")
-    public ResponseEntity<String> getCountryCodes(
+    public ResponseEntity<String> getLocation(
             @Parameter(name = "location", example = "name to search, e.g. 'Isla Vista' or 'Eiffel Tower'") @RequestParam String location)
             throws JsonProcessingException {
         log.info("getCountryCodes: location={}", location);
-        String result = locationCodeQueryService.getJSON(location);
+        String result = locationQueryService.getJSON(location);
         return ResponseEntity.ok().body(result);
     }
 
